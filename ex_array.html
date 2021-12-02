@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex Array</title>
+</head>
+<body>
+    Nome:
+    <input type="text" id="nome"><br>
+
+    Sobrenome:
+    <input type="text" id="sobrenome"><br>
+
+    Peso:
+    <input type="text" id="peso"><br>
+
+    Altura:
+    <input type="text" id="altura"><br><br>
+
+    <input type="button" onclick="addPessoa();" value="Enviar">
+
+    <div id="lista">
+
+    </div>
+
+    
+</body>
+<script>
+    let pessoas = [];
+    function newPessoa(nome, sobrenome, peso, altura) {
+        return {
+            nome,
+            sobrenome,
+            peso,
+            altura
+        }
+    }
+
+    function addPessoa(){
+        let p = newPessoa(document.getElementById("nome").value, 
+            document.getElementById("sobrenome").value,
+            document.getElementById("peso").value,
+            document.getElementById("altura").value);
+        pessoas.push(p);
+
+        document.getElementById("lista").innerHTML += p.nome + " "+p.sobrenome+"<br>";
+        console.log(pessoas);    
+    }
+</script>
+</html>
